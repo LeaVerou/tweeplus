@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>twee+ // Longer tweets, no strings attached</title>
+<link rel="shortcut icon" href="img/favicon.png" />
+<link rel="stylesheet" href="style.css" />
+<!--[if lte IE 8]><script>
+	document.createElement('hgroup');
+	document.createElement('footer');
+</script><![endif]--> 
+	
+</head>
+<body>
+
+<hgroup>
+	<h1><a href="?#" title="Click to clear"><span>twee</span>+</a></h1>
+	<h2>Longer tweets, no strings attached</h2>
+</hgroup>
+
+<form action="http://twitter.com/intent/tweet" target="_blank">
+	<textarea maxlength="2000" placeholder="Type your long tweet here" required></textarea>
+	<input type="hidden" name="text" />
+	<button type="submit">Post to twitter</button>
+	<p class="counters">
+		<span id="counter">0</span> characters,
+		<span id="counter-encoded">0</span> encoded
+	</p>
+	<div id="reply" class="reply">
+		<label>
+			In reply to
+			<input type="url" id="reply-url" placeholder="Tweet URL" />	
+		</label>
+		<input type="hidden" name="in_reply_to" id="in_reply_to" value="" />
+		<p class="tooltip"><strong>It looks like you’re trying to post a reply.</strong> It’s much better if you paste the tweet URL in this field instead, so that it’s linked to the tweet you’re replying to. The @-mention in the beginning will be added automatically.</p>
+	</div>
+	<p id="links" class="links"></p>
+</form>
+
+<footer>
+	<a href="#%2B+Post+a+part+of+a+tweet+and+link+to+the+rest+%28up+to+2050+characters%29%0A%2B+We+don%E2%80%99t+store+anything%2C+your+data+doesn%27t+even+touch+our+server%0A%2B+No+registration%2C+no+twitter+connect%2C+no+hassle%0A%2B+Even+if+this+site+disappears+%E2%80%94which+we+don%E2%80%99t+plan+to%E2%80%94%2C+you+can+still+recover+your+tweets+%28just+save+this+page+locally+and+use+it%29%0A%0ARead+more%3A+http%3A%2F%2Fleaverou%2Eme%2F2011%2F08%2Ftweeplus-longer-tweets-no-strings-attached">About</a>
+	+ <a href="#twee%2B+fully+works+in%3A%0A%40Firefox+3%2E6+%0A%40Opera+10%2E60+%0A%40GoogleChrome%0AApple+Safari+5+%0A%40IE+9+%0A%0AIt+works+in+older+versions+too%2C+but+some+parts+might+be+buggy+%28mostly+writing+twee%2Bs%2C+reading+is+supported+much+more+widely%29%2E">Browser support</a>
+	+ <a href="http://twitter.com/tweeplusapp">@tweeplusapp</a>
+	+ <a href="http://twitter.com/LeaVerou">Created by @LeaVerou</a>
+</footer>
+
+<script src="api.js"></script>
+<script src="tweeplus.js"></script>
+
+<script>_gaq = [['_setAccount', 'UA-25106441-1'], ['_trackPageview']];</script>
+<script src="http://www.google-analytics.com/ga.js" async></script>
+	
+</body>
+</html>
