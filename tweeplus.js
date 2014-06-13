@@ -11,35 +11,14 @@ var mobile = /i(Phone|Pad)/i.test(navigator.userAgent), // mobile devices I coul
 	counter = $('counter'),
 	counterEncoded = $('counter-encoded'),
 	linksContainer = $('links'),
-	replyURL = $('reply-url'),
+	replyURL = $('reply-url');
 
-	// Find radial-gradient prefix
-	prefix = (function() {
-		var prefixes = ['', '-moz-', '-webkit-', '-o-', '-ms-'],
-			gradient = 'radial-gradient(white,black)',
-			style = document.createElement('p').style;
-	
-		for(var i=0; i<prefixes.length; i++) {
-			try { 
-				style.backgroundImage = prefixes[i] + gradient;
-			} catch(e) {}
-	
-			if(style.backgroundImage) {
-				return prefixes[i];
-			}
-		}
-	
-		return false;
-	})();
+document.onmousemove = function(evt) {
+	var x = ~~(100/innerWidth * evt.clientX),
+		y = ~~(100/innerHeight * evt.clientY);
 
-if (prefix !== false) {
-	onmousemove = function(evt) {
-		var x = ~~(100/innerWidth * evt.clientX),
-			y = ~~(100/innerHeight * evt.clientY);
-
-		document.body.style.backgroundImage = prefix + 'radial-gradient(' + x + '% ' + y + '%, rgba(0,0,0,0), black)';
-	};
-}
+	document.body.style.backgroundImage = 'radial-gradient(at ' + x + '% ' + y + '%, transparent, black)';
+};
 
 var encodingFactor = 0;
 
