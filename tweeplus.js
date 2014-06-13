@@ -135,7 +135,10 @@ replyURL.onfocus = function() {
  * Helper functions
  */
 function updateReply() {
-	$('in_reply_to').value = replyURL.value? (replyURL.value.match(/\/status\/(\d{3,})$/i) || [,''])[1] : '';
+	var inReply = $('in_reply_to');
+	
+	inReply.value = replyURL.value? (replyURL.value.match(/\/status\/(\d{3,})$/i) || [,''])[1] : '';
+	inReply.disabled = !!inReply.value;
 }
 
 function adjustSize() {
