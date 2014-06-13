@@ -138,7 +138,7 @@ function updateReply() {
 	var inReply = $('in_reply_to');
 	
 	inReply.value = replyURL.value? (replyURL.value.match(/\/status\/(\d{3,})$/i) || [,''])[1] : '';
-	inReply.disabled = !!inReply.value;
+	inReply.disabled = !inReply.value;
 }
 
 function adjustSize() {
