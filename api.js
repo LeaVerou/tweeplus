@@ -110,12 +110,12 @@ return self = {
 			text = text.trim? text.trim() : text.replace(/^\s+|\s+$/g, '');
 			
 			var username = replyURL? (replyURL.match(/\/(\w+)\/status\//i) || [,''])[1] : '',
-				cutoff = 116 - (username? username.length + 2 : 0), // initial cut-off point
+				cutoff = 114 - (username? username.length + 2 : 0), // initial cut-off point
 				summary,
 				mentions = self.mentions(text),
 				previousLength = mentions.length + 1;
 	
-			while(mentions.length < previousLength) {
+			while (mentions.length < previousLength) {
 				summary = text.slice(0, cutoff - (mentions.length? mentions.join(' ').length + 1 : 0));
 				previousLength = mentions.length;
 				mentions = private.remove(mentions, self.mentions(summary));
@@ -124,8 +124,8 @@ return self = {
 			apig.href = location.href;
 		
 			apig.search = replyURL? 'in_reply_to=' + replyURL : '';
-	
-			return summary + '[…] ' + apig.href + (mentions? ' ' + mentions.join(' ') : '');
+
+			return summary + '[…] ' + apig.href + (mentions.length? ' ' + mentions.join(' ') : '');
 		}
 		else {
 			return text;
